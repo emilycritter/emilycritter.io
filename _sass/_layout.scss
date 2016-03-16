@@ -20,6 +20,9 @@ h1, h2, h3, h4, h5, h6, p, li {
     background-position: center;
     background-size: cover;
     opacity: 0.90;
+    @include media-query($on-palm) {
+      height: 500px;
+    }
     .wrapper {
       position: fixed;
       background-color: rgba(192,192,192,0.3);
