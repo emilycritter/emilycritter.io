@@ -34,13 +34,14 @@ h1, h2, h3, h4, h5, h6, p, li {
       padding: 0;
       padding-left: $spacing-unit;
 
-      font-size: 12px;
+      font-size: 16px;
       font-weight: 300;
       line-height: $base-line-height;
       font-family: $nav-font-family;
       text-decoration: none;
 
       .trigger {
+        font-size: 12px;
         a {
           color: $text-color;
           padding: 0 ($spacing-unit / 2);
