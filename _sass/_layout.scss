@@ -1,33 +1,52 @@
 /**
  * Site header
  */
+
 .site-header {
-    border-top: 5px solid $grey-color-dark;
+  // Positioning context for the mobile navigation icon
+  position: relative;
+  width: 100%;
+  .heading-banner {
+    border-top: 1px solid $grey-color-light;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
-}
-
-.site-title {
-    font-size: 26px;
+    height: 700px;
+    background-image: url('/img/desert.png');
+    background-position: center;
+    background-size: cover;
+    opacity: 0.95;
+  }
+  .wrapper {
+    position: fixed;
+    background-color: rgba(192,192,192,0.3);
+    width: 100%;
+    margin: 0;
+    font-family: $nav-font-family;
+    line-height: $base-line-height;
+    font-size: 12px;
     font-weight: 300;
-    line-height: 56px;
-    letter-spacing: -1px;
+    // letter-spacing: -1px;
     margin-bottom: 0;
-    float: left;
-
-    &,
-    &:visited {
-        color: $grey-color-dark;
+    display: flex;
+    color: $text-color;
+    justify-content: space-around;
+    .site-title {
+        &,&:visited {
+            color: $grey-color-dark;
+        }
     }
+    .trigger {
+      &,&:visited {
+          color: $grey-color-dark;
+      }
+    }
+  }
 }
+
 
 .site-nav {
-    float: right;
-    line-height: 56px;
-
+    line-height: $base-line-height;
+    font-size: 12px;
     .menu-icon {
         display: none;
     }
@@ -38,7 +57,7 @@
 
         // Gaps between nav items, but not on the last one
         &:not(:last-child) {
-            margin-right: 20px;
+            margin-left: 100px;
         }
     }
 
@@ -169,6 +188,7 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+    position: absolute;
 }
 
 .page-heading {
