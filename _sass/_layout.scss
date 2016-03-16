@@ -443,20 +443,18 @@ hr {
         margin-left: 0;
       }
       li {
-        flex-direction: column;
+        flex-direction: column-reverse;;
         justify-content: center;
         .portfolio-image {
           img {
             max-width: 100%;
             margin-right: 0;
           }
+          margin-bottom: $spacing-unit;
         }
         .portfolio-desc {
           max-width: 100%;
           margin-left: 0;
-          h3 {
-            margin-top: $spacing-unit;
-          }
         }
       }
     }
