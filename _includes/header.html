@@ -2,7 +2,6 @@
   <div class="heading-banner">
     <div class="wrapper">
 
-      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title | downcase }}</a>
 
       <nav class="site-nav">
         <a href="#" class="menu-icon">
@@ -14,6 +13,7 @@
         </a>
 
         <div class="trigger">
+          <a class="site-title" href="{{ site.baseurl }}/">home</a>
           {% for my_page in site.pages %}
             {% if my_page.title %}
             <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title | downcase }}</a>
@@ -23,5 +23,33 @@
       </nav>
 
     </div>
+
+    <div class="header-content">
+      <h1 class="firstname">emily</h1>
+      <h1>cox</h1>
+      <h1>ritter</h1>
+      <h4>
+        web developer &nbsp;<br>
+        science lover &nbsp;
+      </h4>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:{{ site.email }}"><i class="fa fa-envelope" style="font-size: 15px;"></i></a>
+        </li>
+        {% if site.github_username %}
+        <li>
+          {% include icon-github.html username=site.github_username %}
+        </li>
+        {% endif %}
+
+        {% if site.twitter_username %}
+        <li>
+          {% include icon-twitter.html username=site.twitter_username %}
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+
+
   </div>
 </header>
