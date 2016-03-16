@@ -95,6 +95,11 @@ GEM
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
+    logutils (0.6.1)
+    markdown (1.2.0)
+      kramdown (>= 1.5.0)
+      props (>= 1.1.2)
+      textutils (>= 0.10.0)
     mercenary (0.3.5)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -104,6 +109,7 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     octokit (4.3.0)
       sawyer (~> 0.7.0, >= 0.5.3)
+    props (1.1.2)
     public_suffix (1.5.3)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
@@ -111,12 +117,18 @@ GEM
     rdiscount (2.1.8)
     redcarpet (3.3.3)
     rouge (1.10.1)
+    rubyzip (1.2.0)
     safe_yaml (1.0.4)
     sass (3.4.21)
     sawyer (0.7.0)
       addressable (>= 2.3.5, < 2.5)
       faraday (~> 0.8, < 0.10)
     terminal-table (1.5.2)
+    textutils (1.4.0)
+      activesupport
+      logutils (>= 0.6.1)
+      props (>= 1.1.2)
+      rubyzip (>= 1.0.0)
     thread_safe (0.3.5)
     typhoeus (0.8.0)
       ethon (>= 0.8.0)
@@ -128,6 +140,9 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll
+  kramdown (~> 1.9)
+  markdown (~> 1.2)
 
 BUNDLED WITH
    1.11.2
