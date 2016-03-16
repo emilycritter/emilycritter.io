@@ -401,7 +401,6 @@ hr {
       flex-direction: row;
       justify-content: space-between;
       padding: 0 $spacing-unit;
-      color: red;
       @include media-query($on-palm) {
         flex-direction: column;
       }
@@ -578,6 +577,9 @@ hr {
   background: $grey-color-dark;
   border-radius: 5px;
   padding: 1em;
+  @include media-query($on-palm) {
+    margin-left: 70px;
+  }
 }
 .cd-timeline-content:after {
   content: "";
