@@ -384,7 +384,9 @@ hr {
       flex-direction: row;
       border-top: 1px solid $grey-color-light;
       ul {
-        padding: 15px;
+        margin: 15px;
+        li {
+        }
       }
     }
   }
@@ -394,20 +396,6 @@ hr {
       display: flex;
       flex-direction: row;
       align-items: center;
-      @media screen and (max-width: 700px) {
-        .portfolio {
-          li {
-            display: flex;
-            flex-direction: column;
-            max-width: 100%;
-            margin-top: 20px;
-            .portfolio-desc {
-              max-width: 300px;
-              border-bottom: 1px solid $grey-color-light;
-            }
-          }
-        }
-      }
       .portfolio-image {
         img {
           height: 250px;
@@ -434,6 +422,23 @@ hr {
       color: #fff;
     }
   }
+
+@media only screen and (max-width: 700px) {
+  .portfolio {
+    li {
+      background: red;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      margin-top: 20px;
+      .portfolio-desc {
+        max-width: 300px;
+        border-bottom: 1px solid $grey-color-light;
+      }
+    }
+  }
+}
+
   /* Timeline */
 #cd-timeline {
   position: relative;
