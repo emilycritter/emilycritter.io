@@ -334,6 +334,25 @@ hr {
       color: $grey-color-dark;
   }
   .about-me {
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      width: 100%;
+      li {
+        text-align: right;
+        max-width: 50%;
+        p {
+          margin-right: 30px;
+        }
+        img {
+          width: 200px;
+          border-radius: 100px;
+        }
+      }
+    }
   }
   .work-history {
     li {
