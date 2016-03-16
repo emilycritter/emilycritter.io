@@ -1,3 +1,8 @@
+h1, h2, h3, h4, h5, h6, p, li {
+  font-family: $nav-font-family;
+  color: $grey-color-dark;
+}
+
 /**
  * Site header
  */
@@ -261,6 +266,10 @@ hr {
     color: $grey-color;
     margin: 5px 0;
   }
+  h6 {
+    text-align: center;
+    padding: 5px;
+  }
 }
 
 
@@ -308,4 +317,46 @@ hr {
             font-size: 18px;
         }
     }
+}
+.home-page {
+  // width: 100%;
+  .wrapper {
+    // width: 100%;
+  }
+  h1 {
+    text-align: right;
+    border-bottom: 1px solid $grey-color-light;
+  }
+  hr {
+    border-top: 1px solid $grey-color-light;
+  }
+  a {
+      text-decoration: none;
+      color: $grey-color-dark;
+  }
+  .about-me {
+    border-bottom: 1px solid $grey-color-light;
+  }
+  .portfolio {
+    li {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .portfolio-image {
+        img {
+          height: 250px;
+          width: 300px;
+          opacity: 0.7;
+          margin-right: 30px;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      .portfolio-desc {
+        width: 400px;
+      }
+    }
+  }
 }
