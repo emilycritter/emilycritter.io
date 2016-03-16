@@ -4,7 +4,7 @@ title:  "Week 6 the iron yard: newbie coding mistakes"
 subtitle: "Amelia Bedelia learns to code"
 date:   2016-03-07 18:24:59 -0500
 author: "Emily C. Ritter"
-categories: blog
+categories: blog tiy
 ---
 We started off the week reviewing the weekend's reddit lab. The workload ramped up dramatically last week, and many of us were left scrambling to complete assignments. As a result, Monday predominantly consisted of review and Monday's homework was to watch the "[Amelia Bedelia Learns to Code](http://confreaks.tv/videos/railsconf2015-amelia-bedelia-learns-to-code)" talk by Kylie Stradley from the 2015 RailsConf.  The takeaway from the video is that developers make mistakes. I'll say that again. ALL DEVELOPERS MAKE MISTAKES.
 

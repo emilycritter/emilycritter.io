@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Week 1 the iron yard"
+subtitle: "The journey begins"
+date:   2016-02-05 18:24:59 -0500
+author: "Emily C. Ritter"
+categories: blog tiy
+---
+I think I'm going to like this place. No, I know I will. 
