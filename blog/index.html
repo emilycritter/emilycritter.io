@@ -2,10 +2,20 @@
 layout: default
 title: Blog
 ---
-	<h1>{{ page.title }}</h1>
-	<ul class="posts">
 
-	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>
+<div class="blog-post-list">
+
+	<div class="posts">
+
+		{% for post in site.posts %}
+			<a href="{{ post.url }}" title="{{ post.title }}">
+				<h1>{{ post.title }}</h1>
+				<h3>{{ post.subtitle}}</h3>
+			</a>
+			<h4><em>Posted by Emily C. Ritter on {{ post.date | date_to_string }}</em></h4>
+			<hr>
+		{% endfor %}
+		<h6 class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></h6>
+	</div>
+
+</div>

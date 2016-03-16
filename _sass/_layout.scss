@@ -1,59 +1,118 @@
+h1, h2, h3, h4, h5, h6, p, li {
+  font-family: $nav-font-family;
+  color: $grey-color-dark;
+}
+
 /**
  * Site header
  */
+
 .site-header {
-    border-top: 5px solid $grey-color-dark;
+  // Positioning context for the mobile navigation icon
+  position: relative;
+  width: 100%;
+  .heading-banner {
+    border-top: 1px solid $grey-color-light;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    height: 700px;
+    background-image: url('/img/desert.png');
+    background-position: center;
+    background-size: cover;
+    opacity: 0.90;
+    .wrapper {
+      position: fixed;
+      background-color: rgba(192,192,192,0.3);
+      min-width: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 0;
+      padding-left: $spacing-unit;
 
-    // Positioning context for the mobile navigation icon
-    position: relative;
-}
+      font-size: 12px;
+      font-weight: 300;
+      line-height: $base-line-height;
+      font-family: $nav-font-family;
+      text-decoration: none;
 
-.site-title {
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
-
-    &,
-    &:visited {
-        color: $grey-color-dark;
+      .trigger {
+        a {
+          color: $text-color;
+          padding: 0 ($spacing-unit / 2);
+        }
+        &,
+        &:visited {
+            color: $grey-color-dark;
+        }
+      }
     }
+  }
+  .header-content {
+    // background-color: rgba(192,192,192,0.3);
+    padding: $spacing-unit / 2;
+    position: absolute;
+    right: $spacing-unit / 2;
+    top: 60px;
+    h1 {
+      letter-spacing: -1px;
+      font-size: 60px;
+      line-height: 0.7;
+      font-family: $nav-font-family;
+      text-decoration: none;
+      text-align: right;
+      color: $text-color;
+      .firstname {
+        font-weight: 300;
+      }
+    }
+    h4 {
+      font-family: $nav-font-family;
+      text-decoration: none;
+      text-align: right;
+      color: $text-color;
+      margin-bottom: 5px;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    li {
+      text-decoration: none;
+      .icon {
+        fill: $text-color;
+      }
+      a {
+        i {
+          color: $text-color;
+        }
+      }
+      .username {
+        display: none;
+      }
+    }
+  }
 }
+
 
 .site-nav {
-    float: right;
-    line-height: 56px;
-
     .menu-icon {
         display: none;
-    }
-
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the last one
-        &:not(:last-child) {
-            margin-right: 20px;
-        }
     }
 
     @include media-query($on-palm) {
         position: absolute;
         top: 9px;
-        right: $spacing-unit / 2;
+        left: $spacing-unit / 2;
         background-color: $background-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
-
         .menu-icon {
             display: block;
-            float: right;
+            float: left;
             width: 36px;
             height: 26px;
             line-height: 0;
@@ -98,14 +157,22 @@
  * Site footer
  */
 .site-footer {
+    position: relative;
     border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+    padding: ($spacing-unit / 2) 0;
+    font-family: $nav-font-family;
+
+    p {
+      text-decoration: none;
+      font-size: 12px;
+      color: $text-color;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
 }
 
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
-}
+
 
 .contact-list,
 .social-media-list {
@@ -114,31 +181,11 @@
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
     @extend %clearfix;
 }
 
 .footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {
@@ -155,10 +202,13 @@
 }
 
 @include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+    // .footer-col {
+    //     float: none;
+    //     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    //     width:         calc(100% - (#{$spacing-unit} / 2));
+    // }
+    .footer-heading {
+        flex-direction: column;
     }
 }
 
@@ -169,6 +219,8 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+    position: relative;
+    width: 100%;
 }
 
 .page-heading {
@@ -192,6 +244,32 @@
 .post-link {
     display: block;
     font-size: 24px;
+}
+hr {
+  border-top: 1px solid $grey-color-light;
+}
+.posts {
+  color: $grey-color-dark;
+  font-family: $nav-font-family;
+  a {
+    color: $grey-color-dark;
+    text-decoration: none;
+  }
+  h1 {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  h4 {
+    color: $grey-color;
+    margin: 5px 0;
+  }
+  h6 {
+    text-align: center;
+    padding: 5px;
+  }
 }
 
 
@@ -239,4 +317,46 @@
             font-size: 18px;
         }
     }
+}
+.home-page {
+  // width: 100%;
+  .wrapper {
+    // width: 100%;
+  }
+  h1 {
+    text-align: right;
+    border-bottom: 1px solid $grey-color-light;
+  }
+  hr {
+    border-top: 1px solid $grey-color-light;
+  }
+  a {
+      text-decoration: none;
+      color: $grey-color-dark;
+  }
+  .about-me {
+    border-bottom: 1px solid $grey-color-light;
+  }
+  .portfolio {
+    li {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .portfolio-image {
+        img {
+          height: 250px;
+          width: 300px;
+          opacity: 0.7;
+          margin-right: 30px;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      .portfolio-desc {
+        width: 400px;
+      }
+    }
+  }
 }
