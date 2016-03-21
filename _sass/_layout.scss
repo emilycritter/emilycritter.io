@@ -430,6 +430,12 @@ hr {
         font-size: 14px;
       }
     }
+    .column {
+      li {
+        max-width: 150px;
+        margin: 0;
+      }
+    }
     .front-back {
       display: flex;
       flex-direction: row;
