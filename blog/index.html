@@ -12,7 +12,7 @@ title: Blog
 				<h1>{{ post.title }}</h1>
 				<h3>{{ post.subtitle}}</h3>
 			</a>
-			<h4><em>Posted by Emily C. Ritter on {{ post.date | date_to_string }}</em></h4>
+			<h4><em>Posted by Emily C. Ritter on {{ post.date | date: "%b %-d, %Y" }}</em></h4>
 			<hr>
 		{% endfor %}
 		<h6 class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></h6>
