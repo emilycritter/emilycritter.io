@@ -176,6 +176,10 @@ h1, h2, h3, h4, h5, h6, p, li {
         text-align: center;
         padding: 0;
         margin: 0;
+        a {
+          text-decoration: none;
+          color: $text-color;
+        }
       }
       ul {
         display: flex;
@@ -428,6 +432,12 @@ hr {
       }
       p {
         font-size: 14px;
+      }
+    }
+    .column {
+      li {
+        max-width: 150px;
+        margin: 0;
       }
     }
     .front-back {
