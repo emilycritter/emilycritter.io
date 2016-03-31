@@ -416,6 +416,7 @@ hr {
       }
       p {
         font-size: 14px;
+        text-align: justify;
       }
     }
   }
@@ -440,15 +441,15 @@ hr {
     }
     .column {
       li {
-        max-width: 150px;
         margin: 0;
+        font-size: 13px;
       }
     }
     .front-back {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding: 0 $spacing-unit;
+      padding: 0 ($spacing-unit/2);
       @include media-query($on-palm) {
         flex-direction: column;
       }
@@ -456,11 +457,10 @@ hr {
     .tech-list {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       border-top: 1px solid $grey-color-light;
       ul {
         margin: 15px;
-        li {
-        }
       }
     }
   }
@@ -484,6 +484,7 @@ hr {
       }
       .portfolio-desc {
         width: 400px;
+        text-align: justify;
       }
     }
     @include media-query($on-palm) {
