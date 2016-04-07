@@ -4,7 +4,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="Emily Cox Ritter - web developer - fort worth, tx {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="Emily Ritter{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keyword" content="Emily Cox Ritter">
+  <meta name="keyword" content="emilycritter">
+  <meta name="keyword" content="emily c ritter">
+  <meta name="keyword" content="emily ritter">
+  <meta name="keyword" content="fort worth texas">
+  <meta name="keyword" content="web developer">
   <meta name="google-site-verification" content="pNoWpC6GKwGEUkaCBaA0OGCAV0diXw-dMnYShX0WBDQ" />
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
