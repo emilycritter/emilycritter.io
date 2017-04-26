@@ -449,7 +449,6 @@ hr {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding: 0 ($spacing-unit/2);
       @include media-query($on-palm) {
         flex-direction: column;
       }
@@ -460,7 +459,7 @@ hr {
       justify-content: space-between;
       border-top: 1px solid $grey-color-light;
       ul {
-        margin: 15px;
+        margin: 5px;
       }
     }
   }
