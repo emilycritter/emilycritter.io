@@ -1,3 +1,6 @@
+@import '_flexbox';
+@import '_mixins';
+
 h1, h2, h3, h4, h5, h6, p, li {
   font-family: $nav-font-family;
   color: $grey-color-dark;
@@ -14,9 +17,9 @@ h1, h2, h3, h4, h5, h6, p, li {
      z-index: 1;
      background-color: rgba(192,192,192,0.5);
      margin: 0;
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
+     @include flexbox();
+     @include flex-direction(row);
+     @include justify-content(flex-start);
      padding: 0;
      padding-left: $spacing-unit;
      font-size: 16px;
@@ -28,12 +31,9 @@ h1, h2, h3, h4, h5, h6, p, li {
      .trigger {
        font-size: 12px;
        a {
-         color: $text-color;
+         color: inherit;
          padding: 0 ($spacing-unit / 2);
-       }
-       &,
-       &:visited {
-           color: $grey-color-dark;
+         @include text-hover-effect($grey-color-dark);
        }
      }
 
@@ -51,7 +51,6 @@ h1, h2, h3, h4, h5, h6, p, li {
          border-radius: 5px;
          text-align: right;
          width: 30px;
-        //  flex-direction: column;
         &:hover {
           width: 100px;
         }
@@ -108,6 +107,9 @@ h1, h2, h3, h4, h5, h6, p, li {
     background-position: center;
     background-size: cover;
     opacity: 0.90;
+    @include media-query(800px) {
+      background-image: url('/img/desert-mobile.png');
+    }
     @include media-query(480px) {
       height: 500px;
     }
@@ -138,18 +140,22 @@ h1, h2, h3, h4, h5, h6, p, li {
       margin-bottom: 5px;
     }
     ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+      @include flexbox();
+      @include flex-direction(row);
+      @include justify-content(space-around);
+      @include align-items(center);
     }
     li {
-      text-decoration: none;
+      color: $text-color;
       .icon {
         fill: $text-color;
+        @include text-hover-effect($text-color);
       }
       a {
+        color: inherit;
+        @include text-hover-effect($text-color);
         i {
-          color: $text-color;
+          color: inherit;
         }
       }
       .username {
@@ -170,9 +176,9 @@ h1, h2, h3, h4, h5, h6, p, li {
     padding: ($spacing-unit / 2) 0;
     font-family: $nav-font-family;
     .wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(center);
       p {
         text-decoration: none;
         font-size: 12px;
@@ -182,32 +188,37 @@ h1, h2, h3, h4, h5, h6, p, li {
         margin: 0;
         a {
           text-decoration: none;
-          color: $text-color;
+          color: inherit;
+          @include text-hover-effect($text-color);
         }
       }
       ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 96px;
+        @include flexbox();
+        @include flex-direction(row);
+        @include justify-content(space-around);
+        @include align-items(center);
         margin: 0;
         height: 24px;
         align-self: center;
       }
       li {
         text-decoration: none;
-        width: 16px;
+        padding: 8px;
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
         .icon {
           fill: $grey-color-dark;
-          font-size: 12px;
+          @include text-hover-effect($grey-color-dark);
         }
         a {
+          @include text-hover-effect($grey-color-dark);
           i {
             font-size: 12px;
-            color: $grey-color-dark;
+            color: inherit;
           }
           .username {
-            visibility: hidden;
+            display: none;
           }
         }
       }
@@ -218,40 +229,47 @@ h1, h2, h3, h4, h5, h6, p, li {
 
 .contact-list,
 .social-media-list {
-    list-style: none;
-    margin-left: 0;
+  list-style: none;
+  margin-left: 0;
+  color: $text-color;
+  a {
+    color: inherit;
+    .icon {
+      fill: $text-color;
+    }
+  }
 }
 
 .footer-col-wrapper {
-    @extend %clearfix;
+  @extend %clearfix;
 }
 
 .footer-col {
-    padding-left: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
 }
 
 @include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+  }
 
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
+  .footer-col-3 {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
 }
 
 @include media-query($on-palm) {
-    // .footer-col {
-    //     float: none;
-    //     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    //     width:         calc(100% - (#{$spacing-unit} / 2));
-    // }
-    .footer-heading {
-        flex-direction: column;
-    }
+  // .footer-col {
+  //     float: none;
+  //     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+  //     width:         calc(100% - (#{$spacing-unit} / 2));
+  // }
+  .footer-heading {
+    @include flex-direction(column);
+  }
 }
 
 
@@ -260,31 +278,31 @@ h1, h2, h3, h4, h5, h6, p, li {
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
-    position: relative;
-    width: 100%;
+  padding: $spacing-unit 0;
+  position: relative;
+  width: 100%;
 }
 
 .page-heading {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .post-list {
-    margin-left: 0;
-    list-style: none;
-    li {
-      margin-bottom: $spacing-unit;
-    }
+  margin-left: 0;
+  list-style: none;
+  li {
+    margin-bottom: $spacing-unit;
+  }
 }
 
 .post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
+  font-size: $small-font-size;
+  color: $grey-color;
 }
 
 .post-link {
-    display: block;
-    font-size: 24px;
+  display: block;
+  font-size: 24px;
 }
 hr {
   border-top: 1px solid $grey-color-light;
@@ -293,8 +311,9 @@ hr {
   color: $grey-color-dark;
   font-family: $nav-font-family;
   a {
-    color: $grey-color-dark;
+    color: inherit;
     text-decoration: none;
+    @include text-hover-effect($grey-color-dark);
   }
   h1 {
     margin-top: 5px;
@@ -319,37 +338,37 @@ hr {
  * Posts
  */
 .post-header {
-    margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit;
 }
 .post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-    line-height: 1;
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1;
+  @include media-query($on-laptop) {
+    font-size: 36px;
+  }
 }
 .post-content {
-    margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit;
 
-    h2 {
-        font-size: 32px;
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
+  h2 {
+    font-size: 32px;
+    @include media-query($on-laptop) {
+      font-size: 28px;
     }
-    h3 {
-        font-size: 26px;
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
+  }
+  h3 {
+    font-size: 26px;
+    @include media-query($on-laptop) {
+      font-size: 22px;
     }
-    h4 {
-        font-size: 20px;
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
+  }
+  h4 {
+    font-size: 20px;
+    @include media-query($on-laptop) {
+      font-size: 18px;
     }
+  }
 }
 
 .home {
@@ -365,19 +384,20 @@ hr {
     border-top: 1px solid $grey-color-light;
   }
   a {
-      text-decoration: none;
-      color: $grey-color-dark;
+    text-decoration: none;
+    color: inherit;
+    @include text-hover-effect($grey-color-dark);
   }
   .about-me {
     ul {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
+      @include flexbox();
+      @include flex-direction(row);
+      @include align-items(center);
+      @include justify-content(center);
       list-style: none;
       width: 100%;
       @include media-query($on-palm) {
-        flex-direction: column-reverse;
+        @include flex-direction(column-reverse);
         margin: 0;
       }
       li {
@@ -404,9 +424,9 @@ hr {
   .work-history {
     li {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      align-items: left;
+      @include flexbox();
+      @include flex-direction(column);
+      @include align-items(left);
       h4 {
         text-decoration: underline;
         margin-bottom: 3px;
@@ -426,9 +446,9 @@ hr {
     }
     li {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      align-items: left;
+      @include flexbox();
+      @include flex-direction(column);
+      @include align-items(left);
       h4 {
         margin-bottom: 3px;
       }
@@ -446,17 +466,17 @@ hr {
       }
     }
     .front-back {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      @include flexbox();
+      @include flex-direction(row);
+      @include justify-content(space-between);
       @include media-query($on-palm) {
-        flex-direction: column;
+        @include flex-direction(column);
       }
     }
     .tech-list {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      @include flexbox();
+      @include flex-direction(row);
+      @include justify-content(space-between);
       border-top: 1px solid $grey-color-light;
       ul {
         margin: 5px;
@@ -466,9 +486,9 @@ hr {
   .portfolio {
     li {
       list-style: none;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      @include flexbox();
+      @include flex-direction(row);
+      @include align-items(center);
       .portfolio-image {
         img {
           height: 250px;
@@ -476,6 +496,7 @@ hr {
           width: 300px;
           opacity: 0.7;
           margin-right: 30px;
+          @include base-transition();
           &:hover {
             opacity: 1;
           }
@@ -491,8 +512,8 @@ hr {
         margin-left: 0;
       }
       li {
-        flex-direction: column-reverse;;
-        justify-content: center;
+        @include flex-direction(column-reverse);
+        @include justify-content(center);
         .portfolio-image {
           img {
             max-width: 100%;
