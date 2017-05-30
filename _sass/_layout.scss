@@ -488,7 +488,7 @@ hr {
       list-style: none;
       @include flexbox();
       @include flex-direction(row);
-      @include align-items(center);
+      @include align-items(flex-start);
       .portfolio-image {
         img {
           height: 250px;
@@ -496,6 +496,7 @@ hr {
           width: 300px;
           opacity: 0.7;
           margin-right: 30px;
+          border: 1px solid $grey-color-light;
           @include base-transition();
           &:hover {
             opacity: 1;
