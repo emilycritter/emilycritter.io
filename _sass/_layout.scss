@@ -103,14 +103,15 @@ h1, h2, h3, h4, h5, h6, p, li {
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
     height: 700px;
-    background-image: url('/img/desert.png');
+    background-image: url('/img/desert.jpg');
     background-position: center;
     background-size: cover;
     opacity: 0.90;
     @include media-query(800px) {
-      background-image: url('/img/desert-mobile.png');
+      height: 600px;
     }
     @include media-query(480px) {
+      background-image: url('/img/desert-mobile.jpg');
       height: 500px;
     }
   }
