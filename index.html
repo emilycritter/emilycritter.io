@@ -2,16 +2,24 @@
 layout: default
 ---
 
-<div class="home">
+{% include header.html %}
 
-{% include aboutme.html %}
+<div class="page-content home-page">
+  <div class="wrapper">
 
-{% include software.html %}
+    <div class="home">
 
-{% include portfolio.html %}
+    {% include aboutme.html %}
 
-{% include workhistory.html %}
+    {% include software.html %}
 
-{% include education.html %}
+    {% include portfolio.html %}
 
+    {% include workhistory.html %}
+
+    {% include education.html %}
+
+    </div>
+
+  </div>
 </div>
