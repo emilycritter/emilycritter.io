@@ -1,0 +1,117 @@
+// --------------------------------
+
+// (START) Global editor code https://codyhouse.co/ds/globals/buttons
+
+// --------------------------------
+
+:root {
+  --btn-padding-x: var(--space-md);
+  --btn-padding-y: var(--space-xs);
+  --btn-radius: 2em;
+}
+
+.btn {
+  background: var(--color-primary);
+  color: var(--color-white);
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  line-height: 1;
+  transition: all 0.3s ease;
+
+  &:focus {
+    transition: all 0.3s ease;
+  }
+}
+
+// themes
+.btn--primary {
+  font-family: var(--font-primary);
+  font-weight: normal;
+  @include fontSmooth;
+
+  &:hover {
+  }
+
+  &:focus {
+  }
+
+  &:active {
+  }
+}
+
+.btn--subtle {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  font-weight: normal;
+
+  &:hover {
+    background: var(--color-secondary);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+  }
+
+  &:focus {
+    background: var(--color-secondary);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+  }
+
+  &:active {
+    background: var(--color-secondary);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+  }
+}
+
+.btn--accent {
+  background: var(--color-accent-darker);
+  color: var(--color-white);
+  font-weight: normal;
+  @include fontSmooth;
+}
+
+.btn--white-subtle {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+
+  &:focus {
+    background: transparent;
+  }
+}
+
+.btn--white {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn--accent-gradient {
+  background: linear-gradient(90deg, var(--gradient-secondary-stop-1), var(--gradient-secondary-stop-2));
+}
+
+// feedback
+.btn--disabled, .btn[disabled], .btn[readonly] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+// size
+.btn--sm {
+  font-size: 0.8em;
+}
+
+.btn--md {
+  font-size: 1.2em;
+}
+
+.btn--lg {
+  font-size: 1.4em;
+}
+
+// --------------------------------
+
+// (END) Global editor code
+
+// --------------------------------
