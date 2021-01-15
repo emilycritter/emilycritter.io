@@ -1,0 +1,13 @@
+.object-fit {
+  @supports(object-fit: cover) {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  @supports (object-fit: cover) and (-ms-ime-align:auto) {
+    // fix issue on Edge - object-fit not working for video elements
+    height: auto;
+    width: auto;
+  }  
+}
